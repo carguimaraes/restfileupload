@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-ng-app="AppGMA">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/gma.css">
+   
+    <title>Bancada Teste Carga Arquivo</title>
+    
+    
+
+</head>
+<body data-ng-controller="MainCtr as mainCtr" >
+    <div  class="container">
+        
+        <div style="text-align:center; height:60px;  padding:10px;" >
+           <button type="button"  data-ng-click="mainCtr.showView('Login',1)"   >Login</button>
+           <button type="button"  data-ng-click="mainCtr.showView('Obra',2)"    >ListarObras</button>
+        </div>
+               
+        
+        <indicador-carregando></indicador-carregando>   
+
+        <!-- TODO CRIAR DIRETIVA        -->
+        <div class="alert alert-danger " role="alert" style="margin-right:15%; margin-left:15%;"  data-ng-show="mainCtr.isShowMsg"  data-ng-cloak>
+            <button type="button" class="close"  aria-label="Fechar" data-ng-click="mainCtr.fechar()"><span aria-hidden="true">&times;</span></button>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <strong>Erro:</strong>
+            <ul data-ng-repeat="item in mainCtr.listaMsg" >
+                <li>{{item}}</li>
+            </ul>
+        </div>
+                    
+        <div  data-ng-view  >
+          
+        </div>
+        
+
+    </div>
+
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/angular-route.min.js"></script>
+
+
+    <script src="bootstrap/js/jquery-1.11.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+
+    <script src="app/appGMA.js?v=1>" type="text/javascript"></script>
+    <script src="app/directives/indicadorCarregando.js?v=1" type="text/javascript"></script>
+
+
+  <script src="app/services/loginWebApiService.js?v=1" type="text/javascript"></script>
+  <script src="app/services/obraWebApiService.js?v=1" type="text/javascript"></script>
+  <script src="app/services/messageService.js?v=1" type="text/javascript"></script>
+
+
+    <script src="app/controllers/mainCtr.js?v=1" type="text/javascript"></script>
+    <script src="app/controllers/loginCtr.js?v=1" type="text/javascript"></script>
+    <script src="app/controllers/obraCtr.js?v=1" type="text/javascript"></script>
+  
+
+</body>
+</html>
