@@ -43,6 +43,14 @@ public class ApiServiceRetorno {
 		return getApiServiceRetorno(HttpStatus.BAD_REQUEST, mensagens);
 	}
 
+	// 401
+	public static ApiServiceRetorno FalhaLoginNaoAutorizado(String[] mensagens) {
+	
+		return getApiServiceRetorno(HttpStatus.UNAUTHORIZED, mensagens);
+	}
+
+	
+	
 	// 500
 	public static ApiServiceRetorno FalhaServidor(String[] mensagens) {
 
