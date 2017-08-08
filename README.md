@@ -4,6 +4,7 @@ Projeto Carlos Alberto Luciano Martins Guimarães
 
 Projeto em desenvolvimento:
 
+TODO fechar login - pergar contexto spring 
 TODO Monter feração token 
 
 TODO: Montar testes
